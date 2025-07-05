@@ -34,7 +34,7 @@ export default function Profile(){
       
      
             
-            <Avatar src={user.avatar} alt="User Avatar" size="xl" radius="xl" />
+            <Avatar src={user.avatar} alt="User Avatar" size="xl" radius="100%" />
             
             <Text></Text>
             <Text></Text>
