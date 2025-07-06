@@ -7,6 +7,8 @@ import morgan from "morgan"; // Import morgan
 import connectDB from "./db/dbConnect.js";
 import { config } from "./config.js";
 import authRouter from "./routes/authRouter.js";
+import userRouter from "./routes/userRouter.js";
+import shortURLRouter from "./routes/shortURLRouter.js";
 const app = express();
 
 // middlewares
@@ -30,6 +32,9 @@ connectDB();
 
 
 app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter); 
+// Assuming you want to use the same router for /s as well
+app.use("/api/s", shortURLRouter); // Use the same userRouter for /s
 
 
 app.use(express.static(path.join(__dirname, "../../frontend/dist")));
